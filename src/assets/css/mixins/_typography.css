@@ -1,0 +1,58 @@
+/**
+ * Mixins for typography. 
+ *
+ */
+
+@define-mixin text $fs, $fw: normal, $ls: 0, $lh: --var(--font-line-height), $color: var(--color-text) {
+    color: $color;
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;
+    letter-spacing: $ls;
+}
+
+@define-mixin font-size-base {
+    font-size: var(--font-size);
+
+    @media (--mobile-up) {
+        font-size: calc(var(--font-size) * 1.125);
+    }
+
+    @media (--only-pc) {
+        font-size: calc(var(--font-size) * 1.25);
+    }
+}
+
+@define-mixin text-h1 {
+    @mixin text var(--font-size-h1), 300, -0.015em, 1.1em, var(--color-text-emphasis);
+}
+
+@define-mixin text-h2 {
+    @mixin text var(--font-size-h2), 300, -0.007em, 1.1em, var(--color-text-emphasis);
+}
+
+@define-mixin text-h3 {
+    @mixin text var(--font-size-h3), normal, 0, 1.1em, var(--color-text-emphasis);
+}
+
+@define-mixin text-h4 {
+    @mixin text var(--font-size-h4), normal, 0.007em, 1.1em, var(--color-text-emphasis);
+}
+
+@define-mixin text-h5 {
+    @mixin text var(--font-size-h5), 600, 0, 1.1em, var(--color-text-emphasis);
+}
+
+@define-mixin text-h6 {
+    @mixin text var(--font-size-h6), 600, 0, 1.1em, var(--color-text-emphasis);
+}
+
+@define-mixin text-body {
+    @mixin text var(--font-md);
+}
+
+@define-mixin text-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,22 @@
+/**
+ * Mixins for media queris.
+ *
+ */
+
+@define-mixin until $breakpoint {
+    @media screen and (max-width: $breakpoint - 1px) {
+        @content;
+    }
+}
+
+@define-mixin following $breakpoint {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@define-mixin between $from, $to {
+    @media screen and (min-width: $from) and (max-width: $to - 1px) {
+        @content;
+    }
+}

@@ -1,0 +1,10 @@
+/**
+ * Custom media queries rules.
+ *
+ */
+
+/* RESPONSIVE VARIABLES */
+@custom-media --only-mobile screen and (max-width: 767px);
+@custom-media --mobile-up screen and (min-width: 768px);
+@custom-media --tablet-up screen and (min-width: 1024px);
+@custom-media --only-pc screen and (min-width: 1280px);

@@ -1,0 +1,8 @@
+/**
+ * Animation functions.
+ *
+ */
+
+@define-mixin transition $property: all, $speed: var(--ts-speed), $function: var(--ts-function), $delay: 0ms {
+    transition: $property $speed $delay $function;
+}
