@@ -1,167 +1,34 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <div class="poster__wrapper">
-      <div class="poster_header">
-        <div class="poster-avatar__wrapper">
-          <img src="images/avatar2.png" />
-        </div>
-        <div>
-          <div>@Trash</div>
-          <div class="poster-time">три часа назад</div>
-        </div>
+  <div class="poster__wrapper">
+    <div class="poster_header">
+      <div class="poster-avatar__wrapper">
+        <img src="@/assets/images/avatar.png" />
+      </div>
+      <div>
+        <div>@Trash</div>
+        <div class="poster-time">три часа назад</div>
+      </div>
+    </div>
+
+    <div class="poster__img">
+      <img src="@/assets/images/poster.png" />
+    </div>
+
+    <div class="poster__footer">
+      <div class="poster__like">
+        <img src="@/assets/images/like.png">
       </div>
 
-      <div class="poster__img">
-        <img src="images/avatar2-post.png" />
-      </div>
-
-      <div class="poster__footer">
-        <div class="poster__like">
-          <img src="images/like.png">
-        </div>
-
-      </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+
+@Component
+export default class Post extends Vue {
+  @Prop() avatarImg!: string;
+  
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.main__wrapper {
-  max-width: 1100px;
-  margin: auto;
-
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-}
-
-.header__logo {
-  display: flex;
-  align-items: center;
-  text-transform: uppercase;
-}
-
-.header__logo img {
-  width: 50px;
-  margin-right: 20px;
-}
-.header__actions {
-  display: flex;
-  align-items: center;
-  color: darkgray;
-
-}
-
-
-.header__search {
-  margin: 0 50px 0 60px;
-}
-
-.header__search form {
-  display: flex;
-  align-items: center;
-}
-
-.header__search-img {
-  display: flex;
-  align-items: center;
-  width: 20px;
-  margin-right: 10px;
-}
-
-input {
-  background-color: #f1f1f1;
-  border-radius: 5px;
-  border: 1px solid #f1f1f1;
-  padding: 5px;
-}
-
-.btn__primary {
-  background: #98ce1e;
-  color: #ffffff;
-  border: 1px solid #98ce1e;
-  border-radius: 5px;
-  padding: 8px 5px;
-}
-
-.btn__secondary {
-  background: #ffffff;
-  color: darkgray;
-}
-
-.btn__flat {
-  border: none;
-}
-.tags__wrapper {
-  display: flex;
-  margin: 10px 0 20px;
-  flex-wrap: wrap;
-}
-.tags__wrapper div {
-  padding: 5px 12px;
-  border: 1px solid #9c9c9c;
-  border-radius: 5px;
-  margin-right: 18px;
-  color: #9c9c9c;
-}
-
-.posters__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.poster__wrapper {
-  width: calc(25% - 25px);
-  margin-right: 33px;
-}
-
-.poster__wrapper:nth-child(4n) {
-  margin: 0;
-}
-.posters__wrapper img {
-  width: 10px;
-}
-.poster_header {
-  display: flex;
-  align-items: center;
-}
-
-.poster-avatar__wrapper {
-  margin-right: 15px;
-}
-
-.poster-avatar__wrapper img {
-  width: 50px;
-  border-radius: 50%;
-}
-
-.poster-time {
-  color: #9c9c9c;
-}
-
-.poster__img img {
-  width: 100%;
-  height: 250px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-footer {
-
-}
-</style>

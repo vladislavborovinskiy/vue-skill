@@ -1,18 +1,43 @@
 <template>
-    <div>
-      <img alt="Vue logo" src="./assets/logo.png">
-      <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="main__wrapper">
+      <header-app />
+
+      <main>
+        <div class="tags__wrapper">
+          <div># Lol</div>
+          <div># Runterra</div>
+          <div># LeagueOfLegends</div>
+          <div># Champion</div>
+          <div># Skill</div>
+          <div># Rank</div>
+          <div># Typo</div>
+          <div># Music</div>
+          <div># Colors</div>
+          <div># Win</div>
+          <div># Noxus</div>
+        </div>
+
+        <div class="posters__wrapper">
+          <post msg="Welcome to Your Vue.js App"/>
+        </div>
+      </main>
     </div>
 </template>
 
-<script>
-import HelloWorld from './components/Post.vue';
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import HeaderApp from './components/Header.vue';
+import Post from './components/Post.vue';
 
-export default {
-  name: 'App',
+@Component({
   components: {
-    HelloWorld
-  }
+    HeaderApp,
+    Post,
+  },
+})
+export default class App extends Vue {
+  @Prop() msg!: string;
+
 }
 </script>
 
