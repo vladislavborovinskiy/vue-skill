@@ -18,14 +18,14 @@
         </div>
 
         <div class="posters__wrapper">
-          <post msg="Welcome to Your Vue.js App"/>
+          <post :post="postList"/>
         </div>
       </main>
     </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import HeaderApp from './components/Header.vue';
 import Post from './components/Post.vue';
 
@@ -36,7 +36,39 @@ import Post from './components/Post.vue';
   },
 })
 export default class App extends Vue {
-  @Prop() msg!: string;
+
+  postList = [
+    {
+      avatarImg: '@/assets/images/avatar.png',
+      username: 'Trash',
+      date: 'три часа назад',
+      image: '@/assets/images/poster.png',
+    },
+    {
+      avatarImg: '@/assets/images/avatar.png',
+      username: 'Trash',
+      date: 'три часа назад',
+      image: '@/assets/images/poster.png',
+    },
+    {
+      avatarImg: '@/assets/images/avatar.png',
+      username: 'Trash',
+      date: 'три часа назад',
+      image: '@/assets/images/poster.png',
+    },
+    {
+      avatarImg: '@/assets/images/avatar.png',
+      username: 'Trash',
+      date: 'три часа назад',
+      image: '@/assets/images/poster.png',
+    },
+    {
+      avatarImg: '@/assets/images/avatar.png',
+      username: 'Trash',
+      date: 'три часа назад',
+      image: '@/assets/images/poster.png',
+    }
+  ]
 
 }
 </script>
