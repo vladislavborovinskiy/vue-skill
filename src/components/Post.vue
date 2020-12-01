@@ -17,7 +17,7 @@
     <div class="poster__footer">
       <div class="poster__like">
         <img src="@/assets/images/like.png">
-        
+          {{ post.likes }}
       </div>
 
     </div>

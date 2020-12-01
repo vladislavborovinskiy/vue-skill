@@ -15,9 +15,9 @@
 
       <div class="header__search">
         <form>
-                    <span class="header__search-img">
-                        <img src="images/search.png" />
-                    </span>
+          <span class="header__search-img">
+              <img src="@/assets/images/search.png" />
+          </span>
           <input type="text" value="" name="search" />
         </form>
       </div>

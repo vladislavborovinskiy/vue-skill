@@ -18,7 +18,7 @@
         </div>
 
         <div class="posters__wrapper">
-          <post :post="postList"/>
+          <post v-for="(postItem, index) in postList" :key="`post_${index}`" :post="postItem" />
         </div>
       </main>
     </div>
@@ -43,6 +43,8 @@ export default class App extends Vue {
       username: 'Trash',
       date: 'три часа назад',
       image: '@/assets/images/poster.png',
+      likes: 57,
+      tags: [''],
     },
     {
       avatarImg: '@/assets/images/avatar.png',
